@@ -165,6 +165,7 @@ module Stomp
     #
     # Accepts a transaction header ( :transaction => 'some_transaction_id' )
     def acknowledge(message, headers = {})
+      set_subscription_id_if_missing(message.headers['destination'], message.headers)
       txn_id = headers[:transaction]
       if txn_id
         # lets keep around messages ack'd in this transaction in case we rollback
