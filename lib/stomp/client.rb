@@ -179,7 +179,7 @@ module Stomp
         headers['receipt'] = register_receipt_listener lambda {|r| yield r}
       end
       # WORKAROUND
-      headers['subscription'] = message.headers['subscription']
+      #headers['subscription'] = message.headers['subscription']
       @connection.ack message.headers['message-id'], headers
     end
     
