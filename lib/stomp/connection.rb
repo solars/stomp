@@ -470,7 +470,7 @@ module Stomp
           
           used_socket.puts command  
           headers.each {|k,v| used_socket.puts "#{k}:#{v}" }
-          used_socket.puts "content-type: text/plain; charset=UTF-8"
+          #used_socket.puts "content-type: text/plain; charset=UTF-8"
           used_socket.puts
           used_socket.write body
           used_socket.write "\0"
